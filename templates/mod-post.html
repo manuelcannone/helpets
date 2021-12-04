@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/dependancy/bootstrap.min.css">
+        <link rel="stylesheet" href="../static/dependancy/animate.min.css">
+        <link rel="stylesheet" href="../static/css/base.css">
+        <link rel="stylesheet" href="../static/css/mod-post.css">
+        <!-- qui c'è sweetalert -->
+        <link rel="stylesheet" href="../static/dependancy/sweetalert2.min.css">
+        <!-- qui c'è sweetalert -->
+        <title>My announcements</title>
+    </head>
+<body>
+    <!---------------------------------------------------------- start navbar ---------------------------------------------------------------->
+      
+    <!-- Navbar -->
+    <div class="navbar">
+        <nav role="navigation">
+            <div id="menuToggle">
+        
+              <input type="checkbox" />
+              
+              <span></span>
+              <span></span>
+              <span></span>
+              
+              <ul id="menu">
+                <a href="#"><li><b>Accedi</b></li></a>
+                <a href="#"><li><b>Registrati</b></li></a>
+                <a href="#"><li class="saves-li"><b>Inserisci annuncio</b></li></a>
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="saves-li"><img alt="image not found" src="../static/img/bookmark.png"></li></a>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="p-menu">
+              <p>Menù</p>
+          </div>
+
+        <div class="leftContent-nav">
+            <div class="navLogo">
+                <div class="imgBack">
+                    <img alt="image not found" src="../static/img/logoHelPets.png">
+                </div>
+                <p>HelPets.com</p>
+            </div>
+
+
+            <div class="navItems">
+                <a href="#"><p>Home</p></a>
+                <a href="#"><p>Accedi</p></a>
+                <a href="#"><p>Registrati</p></a>
+            </div>
+        </div>
+
+
+        <div class="rightContent-nav animate__animated animate__fadeInRight">
+
+            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <div class="saves">
+                    <img alt="image not found" src="../static/img/bookmark.png">
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="addAnnouncement">
+                    <img alt="image not found" src="../static/img/plus.png">
+                    <p>Inserisci annuncio</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- saved announcement list -->
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Annunci salvati</h5>
+            <img class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" src="../static/img/close.png">
+        </div>
+
+        <div class="offcanvas-body">
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <form><button class="removeButton">Rimuovi</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------------------------- end navbar ---------------------------------------------------------------->
+    
+    <!-- titolo provvisiorio -->
+    <section class="full-page-wh-hg">
+        <div class="div-text-mod-post">
+            <h1 class="color-general-mod-post">I tuoi annunci</h1>
+        </div>
+        <div class="div-position-mod-post">
+                <div class="input-style-mod-post">
+                    <div class="container-lable">
+                        <label for="#" class="label-style-mod-post color-black">Categoria:</label><br>
+                        <input type="text" id="style-mod-post" name="map" class="general-syleOFinput-mod-post"/>
+                    </div>
+                    <div class="button-style-mod-post">
+                        <button class="background-btn btn">cerca</button>
+                    </div>
+                </div>
+                 <!-- start change-post -->
+                <div class="container-style-mod-post">
+                    <div class="container-black-container">
+                    <div class="space-of-img">
+                        <img class="style-img-mod-post" src="../static/img/dog.esemp.png" alt="dog">
+                    </div>
+                </div>
+                    <div class="style-description-mod-post color-black">
+                        <h2 class="h2-style-mod-post" href="#">Descrizione:</h2>
+                        <p href="#" maxlength="50" class="mod-post-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos,saepe eos eum veritatis recusandae enim officiis aliquid quod saepe eos eum veritatis recusandae enim officiis aliquid quod...</p>
+                        <div class="size-mod-post">
+                            <h2 class="h2-style-mod-post">Taglia:</h2>
+                            <p class="mod-post-p">Media</p>
+                        </div>
+                    </div>
+                    <div class="div-btn-position-mod-post">
+                        <div class="btn-div-mod-post">
+                            <a href="" class="background-btn2 btn">Modifica annuncio</a>
+                        </div>
+                        <div class="btn-div-mod-post2">
+                            <form id="delete-btn" action="">
+                                <button type="button" onclick="buttonDetele()" class="background-btn3 btn">Elimina</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- end change-post -->
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="info">
+            <h2>info:</h2>
+            <p>Email: helpets@gmail.com</p>
+            <p>Telofono: "da mettere"</p>
+            <p>Instagram: helpets.com</p>
+
+        </div>
+
+        <div class="terms">
+            <h2>terms:</h2>
+            <a href="#"><p>Termini e condizi</p></a>
+            <a href="#"><p>Assistenza</p></a>
+        </div>
+
+        <div class="logoFooter">
+            <div class="navLogo">
+                <div class="imgBack">
+                    <img alt="image not found" src="../static/img/logoHelPets.png">
+                </div>
+                <p>HelPets.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="develope">
+        <p>Sito sviluppato da <a href="https://www.jready.it/" target="_blank"><span><span id="Jspan">J</span>ready</span></a></p>
+    </div>
+
+</body>
+
+<script src="../static/dependancy/jquery.js"></script>
+<script src="../static/dependancy/sweetalert2.all.min.js"></script>
+<script src="../static/dependancy/bootstrap.min.js"></script>
+<script src="../static/dependancy/wow.min.js"></script>
+
+
+<script>
+    function buttonDetele(){
+        Swal.fire({
+        title: 'sei sicuro?',
+        text: "non potrai tornare indietro",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#FFBB00',
+        cancelButtonColor: '#ff5100',
+        confirmButtonText: 'si cancella',
+        cancelButtonText:'annulla'
+    }).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'cancellato!',
+      'il tuo post è stato eliminato.',
+      'success'
+    ).then((result) => {
+    $('#delete-btn').submit()
+    }
+  )}
+})
+}
+</script>
+</html>

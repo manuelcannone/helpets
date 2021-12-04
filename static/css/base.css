@@ -1,0 +1,961 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('../font/trebuc.woff');
+}
+
+@font-face {
+    font-family: 'Doppio One';
+    src: url('../font/DoppioOne-Regular.woff');
+}
+
+
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+nav{
+    display: none;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 5px;
+  left: 15px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #1a1a1adc;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: black;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: black;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+.p-menu{
+    display: none;
+   position: absolute; 
+   left: 60px;
+   top: 17px;
+}
+
+.p-menu p{
+    margin: 0;
+    font-size: 26px;
+}
+
+#menu
+{
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 100px;
+  background: #FFBB00;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.saves-li{
+    display: none;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+.menu-search-a img{
+    margin-left: 5px;
+}
+
+
+
+
+
+.navbar{
+    justify-content: space-between !important;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.leftContent-nav{
+    margin-left: 2%;
+    display: flex;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.navLogo{
+    display: flex;
+    align-items: center;
+}
+
+.navLogo p{
+    font-size: 26px;
+    font-family: 'Doppio One';
+    margin: 0;
+    margin-left: 10px;
+}
+
+.imgBack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.navLogo img{
+    width: 90px;
+    height: auto;
+}
+
+.navItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+}
+
+.navItems a{
+    text-decoration: none;
+    color: black;
+}
+
+.navItems a:hover{
+    color: #584715;
+}
+
+.navItems p{
+    font-size: 25px;
+    margin: 0;
+    font-family: 'Trebuchet MS' !important;
+}
+
+.rightContent-nav{
+    margin-right: 10%;
+    display: flex;
+    width: 265px;
+    justify-content: space-between;
+}
+
+.addAnnouncement{
+    height: 45px;
+    width: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #FFBB00;
+}
+
+.addAnnouncement img{
+    margin-top: 3px;
+}
+
+.addAnnouncement p{
+    margin: 0;
+    font-size: 21px;
+    font-weight: 500;
+    font-family: 'Trebuchet MS';
+    color: black;
+}
+
+.rightContent-nav a{
+    text-decoration: none;
+}
+
+.rightContent-nav button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.box-offcanvas-header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.offcanvas-header{
+    justify-content: center !important;
+}
+
+.offcanvas-header h5{
+    margin-bottom: 0 !important;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS' !important;
+}
+
+.offcanvas-header img{
+    position: absolute !important;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+}
+
+.btn-close{
+    padding: 0 !important;
+    opacity: 0.8 !important;
+    cursor: pointer !important;
+}
+
+.btn-close:hover{
+    opacity: 1 !important;
+}
+
+.save-announcement{
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px 5px 10px gray;
+    margin-bottom: 20px;
+}
+
+.img-save-announcement img{
+    width: auto;
+    height: auto;
+    max-width: 165px;
+    max-height: 120px;
+}
+
+.img-save-announcement-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.img-save-announcement{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 165px;
+    height: 120px;
+    background-color: black;
+}
+
+.save-announcement-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.save-announcement-buttons button{
+    width: 170px;
+    height: 40px;
+    color: white;
+    border: none;
+    font-size: 24px;
+    font-family: 'Trebuchet MS' !important;
+}
+
+.visitButton{
+    background-color: #FFBB00;
+    margin-bottom: 5px;
+}
+
+.removeButton{
+    background-color: coral;
+    margin-top: 5px;
+}
+
+.saves{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FFBB00;
+}
+
+.saves img{
+    width: 30px;
+    height: 27px;
+}
+
+.footer{
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    width: 100% !important;
+    background-color: black;
+}
+
+.footer p{
+    color: white;
+}
+
+.info p, .terms p{
+    font-size: 18px;
+}
+
+.terms{
+    margin-bottom: 25px;
+}
+
+.terms a{
+    text-decoration: none;
+}
+
+.info, .terms{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info h2, .terms h2{
+    color: #FFBB00;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.footer .info p{
+    margin: 0;
+}
+
+.footer .terms p{
+    margin: 0;
+}
+
+.logoFooter{
+    display: flex;
+}
+
+.develope{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.develope p{
+    margin: 0;
+    font-size: 20px;
+    color: black;
+    width: auto;
+}
+
+.develope p span{
+    font-weight: 700;
+    color: black;
+}
+
+#Jspan{
+    color: #E94E1B;
+}
+
+.develope a{
+    text-decoration: none;
+}
+
+@media all and (max-width: 1196px){
+    .leftContent-nav{
+        width: 650px;
+    }
+
+    .navItems{
+        width: 320px;
+    }
+}
+
+@media all and (max-width: 1096px){
+    .leftContent-nav{
+        width: 600px;
+    }
+
+    .navItems{
+        width: 300px;
+    }
+
+    .navLogo img{
+        width: 80px;
+    }
+
+    .imgBack{
+        width: 90px;
+        height: 70px;
+    }
+
+    .navLogo p{
+        font-size: 24px;
+    }
+
+    .navItems p{
+        font-size: 23px;
+    }
+
+    .saves img{
+        width: 27px;
+        height: 24px;
+    }
+
+    .saves{
+        width: 43px;
+        height: 43px;
+    }
+
+    .addAnnouncement img{
+        width: 23px;
+    }
+
+    .addAnnouncement p{
+        font-size: 20px;
+    }
+
+    .addAnnouncement{
+        width: 200px;
+        height: 43px;
+    }
+
+    .rightContent-nav{
+        width: 250px;
+        margin-right: 8%;
+    }
+}
+
+@media all and (max-width: 990px){
+    .navLogo img{
+        width: 75px;
+    }
+
+    .imgBack{
+        width: 85px;
+        height: 65px;
+    }
+
+    .navLogo p{
+        font-size: 23px;
+    }
+
+    .navItems p{
+        font-size: 21px;
+    }
+
+    .navItems{
+        width: 275px;
+    }
+
+    .leftContent-nav{
+        width: 550px;
+    }
+
+    .saves img{
+        width: 24px;
+        height: 21px;
+    }
+
+    .saves{
+        width: 40px;
+        height: 40px;
+    }
+
+    .addAnnouncement img{
+        width: 21px;
+        margin-top: 1px;
+    }
+
+    .addAnnouncement p{
+        font-size: 19.5px;
+    }
+
+    .addAnnouncement{
+        width: 195px;
+        height: 40px;
+    }
+
+    .rightContent-nav{
+        width: 242px;
+        margin-right: 6%;
+    }
+}
+
+@media all and (max-width: 900px){
+    .navLogo img{
+        width: 70px;
+    }
+
+    .imgBack{
+        width: 80px;
+        height: 60px;
+    }
+
+    .navLogo p{
+        font-size: 22px;
+    }
+
+    .navItems p{
+        font-size: 19px;
+    }
+
+    .navItems{
+        width: 250px;
+    }
+
+    .leftContent-nav{
+        width: 500px;
+    }
+
+    .saves img{
+        width: 22px;
+        height: 19px;
+    }
+
+    .saves{
+        width: 37px;
+        height: 37px;
+    }
+
+    .addAnnouncement img{
+        width: 20px;
+        margin-top: 2.8px;
+    }
+
+    .addAnnouncement p{
+        font-size: 19px;
+    }
+
+    .addAnnouncement{
+        width: 185px;
+        height: 37px;
+    }
+
+    .rightContent-nav{
+        width: 230px;
+        margin-right: 5%;
+    }
+}
+
+@media all and (max-width: 830px){
+    .leftContent-nav{
+        width: 475px;
+    }
+
+    .navLogo img{
+        width: 65px;
+    }
+
+    .imgBack{
+        width: 75px;
+        height: 55px;
+    }
+
+    .navLogo p{
+        font-size: 20px;
+    }
+
+    .navItems p{
+        font-size: 18px;
+    }
+
+    .navItems{
+        width: 230px;
+    }
+
+    .saves img{
+        width: 21px;
+        height: 18px;
+    }
+
+    .saves{
+        width: 36px;
+        height: 36px;
+    }
+
+    .addAnnouncement img{
+        width: 19px;
+        margin-top: 2.5px;
+    }
+
+    .addAnnouncement p{
+        font-size: 18px;
+    }
+
+    .addAnnouncement{
+        width: 178px;
+        height: 36px;
+    }
+
+    .rightContent-nav{
+        width: 220px;
+    }
+}
+
+@media all and (max-width: 780px){
+    .leftContent-nav{
+        width: 470px;
+    }
+}
+
+@media all and (max-width: 770px){
+    .leftContent-nav{
+        width: 460px;
+    }
+}
+
+@media all and (max-width: 750px){
+    nav{
+        display: block;
+    }
+
+    #menu{
+        width: 280px;
+        padding-right: 0;
+    }
+
+    .navLogo p{
+        font-size: 22px;
+    }
+
+    .navItems{
+        display: none;
+    }
+
+    .leftContent-nav{
+        width: 300px;
+        margin: 0;
+        margin-left: -40px;
+    }
+
+    .footer h2{
+        font-size: 36px;
+    }
+
+    .footer p{
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width: 680px){
+    .leftContent-nav{
+        width: 280px;
+    }
+
+    .footer h2{
+        font-size: 34px;
+    }
+
+    .footer p{
+        font-size: 15px;
+    }
+
+    .footer .navLogo{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .footer .navLogo p{
+        margin: 0;
+        margin-top: 5px;
+        font-size: 18px
+    }
+}
+
+@media all and (max-width: 665px){
+    .offcanvas{
+        width: 350px !important;
+    }
+
+    .save-announcement{
+        height: 130px;
+    }
+
+    .offcanvas-header img{
+        width: 25px;
+        height: 25px;
+    }
+
+    .img-save-announcement{
+        width: 145px;
+        height: 115px;
+    }
+
+    .img-save-announcement img{
+        max-width: 145px;
+        max-height: 115px;
+    }
+
+    .save-announcement button{
+        width: 130px;
+        height: 35px;
+        font-size: 21px;
+    }
+}
+
+@media all and (max-width: 660px){
+    .leftContent-nav{
+        width: 270px;
+    }
+}
+
+@media all and (max-width: 650px){
+    .leftContent-nav{
+        width: 260px;
+    }
+}
+
+@media all and (max-width: 640px){
+    .leftContent-nav{
+        width: 250px;
+    }
+}
+
+@media all and (max-width: 630px){
+    .leftContent-nav{
+        width: 240px;
+    }
+}
+
+@media all and (max-width: 620px){
+    .leftContent-nav{
+        width: 230px;
+    }
+}
+
+@media all and (max-width: 610px){
+    .leftContent-nav{
+        width: 220px;
+    }
+}
+
+@media all and (max-width: 600px){
+    .leftContent-nav{
+        width: auto;
+    }
+}
+
+@media all and (max-width: 590px){
+    .leftContent-nav{
+        margin-left: -30px;
+    }
+}
+
+@media all and (max-width: 580px){
+    .leftContent-nav{
+        margin-left: -20px;
+    }
+}
+
+@media all and (max-width: 570px){
+    .leftContent-nav{
+        margin-left: -20px;
+    }
+
+    .rightContent-nav{
+        margin-right: 3%;
+    }
+}
+
+@media all and (max-width: 554px){
+    .saves-li{
+        display: block;
+    }
+
+    .rightContent-nav{
+        display: none;
+    }
+
+    .navbar{
+        justify-content: space-between !important;
+    }
+
+    .p-menu{
+        display: block;
+    }
+
+    .leftContent-nav{
+        margin-right: 40px;
+    }
+}
+
+@media all and (max-width: 550px){
+    .offcanvas{
+        width: 300px !important;
+    }
+
+    .save-announcement{
+        height: 115px;
+    }
+
+    .offcanvas-header h5{
+        font-size: 22px;
+    }
+
+    .img-save-announcement{
+        width: 120px;
+        height: 100px;
+    }
+
+    .img-save-announcement img{
+        max-width: 120px;
+        max-height: 100px;
+    }
+
+    .save-announcement button{
+        width: 100px;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+
+@media all and (max-width: 510px){
+    .footer .navLogo{
+        display: none;
+    }
+
+    .leftContent-nav{
+        margin-right: 30px;
+    }
+}
+
+@media all and (max-width: 460px){
+    .leftContent-nav{
+        margin-right: 20px;
+    }
+}
+
+@media all and (max-width: 410px){
+    .leftContent-nav{
+       display: none;
+    }
+
+    .navbar{
+        height: 70px;
+    }
+}
+
+@media all and (max-width: 400px){
+    .offcanvas{
+        width: 270px !important;
+    }
+
+    .save-announcement{
+        height: 110px;
+    }
+
+    .offcanvas-header h5{
+        font-size: 22px;
+    }
+
+    .img-save-announcement{
+        width: 120px;
+        height: 110px;
+    }
+
+    .img-save-announcement img{
+        max-width: 120px;
+        max-height: 110px;
+    }
+
+    .save-announcement button{
+        width: 95px;
+        height: 30px;
+        font-size: 19px;
+    }
+}
+
+@media all and (max-width: 360px){
+    .footer{
+      flex-direction: column;  
+      align-items: center;
+    }
+
+    .terms{
+        width: 173px;
+    }
+
+    .footer h2{
+        font-size: 32px;
+    }
+}

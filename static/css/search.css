@@ -1,0 +1,537 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.conainer-form{
+width: 100%;
+display: flex;
+justify-content: center;
+height: 140px;
+}
+.div-form-searc-dog {
+    width: 1100px;
+    height: 100%;
+    box-shadow: rgb(59 59 59 / 28%) 0px 0px 20px 8px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+input#icon-1-style {
+    background-image: url("../img/map-icon.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    text-indent: 34px;
+    /* Extra Styling */
+    padding: 5px 3px;
+    transition:0.3s;
+    background-size: 25px 25px;
+    background-position: left;
+}
+input#icon-1-style:focus {
+    background-image:none;
+    text-indent:0px
+}
+select#icon-2-style {
+    background-image: url("../img/menù-icon.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    text-indent: 34px;
+    /* Extra Styling */
+    padding: 5px 3px;
+    transition:0.3s;
+    background-size: 25px 25px;
+    background-position: left;
+}
+select#icon-2-style:focus  {
+    background-image:none;
+    text-indent:0px
+}
+select#icon-3-style {
+    background-image: url("../img/search-icon.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+    text-indent: 34px;
+    /* Extra Styling */
+    padding: 5px 3px;
+    transition:0.3s;
+    background-size: 25px 25px;
+    background-position: left !important;
+}
+select#icon-3-style:focus {
+    background-image:none;
+    text-indent:0px
+}
+.general-syleOFinput{
+    border: 1px solid #6364645c;
+    height: 35px;
+    width: 289px;
+}
+.style-form{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+}
+.btn-style-form{
+    background-color: #FFBB00 !important;
+    color: white !important;
+    border-radius: 0 !important;
+    height:35px !important;
+    padding: 0 !important;
+    width: 65px;
+}
+.button-position{
+    margin-top: 23px;
+}
+.style-label{
+   font-weight:700; 
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+.disabled{
+    display: none;
+}
+.img-login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.img-background{
+   width: 1075px;
+   height: 205px;;
+    background-image: url("../img/dogBackground.png");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+.style-of-register-p{
+    margin: 0;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size: 28px;
+}
+.buttonStyleRegister{
+    background-color: #FFBB00 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    height:35px !important;
+    padding: 0 !important;
+    width: 85px;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 700 !important;
+}
+.dog-description{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.img-container{
+    height: 100%;
+    background-color: black;
+    width: 280px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+}
+.description-width-height{
+    height: 200px;
+    width: 1075px;
+    box-shadow: rgb(59 59 59 / 28%) 0px 0px 20px 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+}
+.container-of-description {
+    height: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.img-description-style{
+    height: auto;
+    width: auto;
+    max-width: 300px !important;
+    max-height: 100% !important;
+}
+.description-text{
+    width: 316px;
+    height: 60px;
+}
+.h2-general-style{
+    color: #FFBB00;
+    margin-bottom:0 !important;
+    font-size: 24px;
+}
+.style-text-description{
+    color: rgb(156, 156, 156);
+    margin-bottom:0 !important;
+    font-size: 14px;
+}
+.maxHW-text-description{
+    max-width: 316px;
+    max-height: 86px;
+}
+.container-description-text{
+    margin-left: 25px;
+}
+.padding-h2-size{
+    margin-top: 25px;
+}
+.container-info-description{
+    width: 280px;
+    height: 100%;
+    margin-left: 60px;
+}
+.style-text-city{
+    margin-bottom:0 !important;
+    color: rgb(156, 156, 156);
+}
+.email-number-style{
+    height: 25px;
+    margin-bottom: 0 !important;
+    color: rgb(156, 156, 156);
+    margin-top: 8px;
+}
+.img-style-email-number{
+    height: 25px;
+    margin-right: 10px;
+}
+.save-dog-div{
+    display: flex;
+    margin-right: 15px;
+}
+@media screen and (max-width: 1300px) {
+    .size-email-text{
+        font-size: 14px;
+    }
+    .div-form-searc-dog {
+        width: 980px;
+    }
+    .img-background {
+        width: 950px;
+    }
+    .style-of-register-p {
+        margin: 0;
+        margin-top: 28px;
+        margin-left: 20px;
+        font-size: 28px;
+    }
+    .description-width-height {
+        height: 200px;
+        width: 950px;
+        box-shadow: rgb(59 59 59 / 28%) 0px 0px 20px 8px;
+        display: flex;
+        align-items: center;
+    }
+  }
+  .img-description-style{
+    height: auto;
+    width: auto;
+    max-width: 200px !important;
+    max-height: 180px !important;
+}
+
+  @media screen and (max-width: 1200px) {
+    .div-form-searc-dog {
+        width: 980px;
+    }
+    .img-background {
+        width: 950px;
+    }
+    .style-of-register-p {
+        margin: 0;
+        margin-top: 28px;
+        margin-left: 20px;
+        font-size: 28px;
+    }
+    .description-width-height {
+        height: 200px;
+        width: 950px;
+        box-shadow: rgb(59 59 59 / 28%) 0px 0px 20px 8px;
+        display: flex;
+        align-items: center;
+    }
+  }
+ 
+  @media screen and (max-width: 1100px) {
+    .size-email-text {
+        font-size: 10px;
+    }
+    .img-description-style {
+        height: auto;
+        width: auto;
+        max-width: 180px !important;
+        max-height: 100% !important;
+    }
+    .div-form-searc-dog {
+        width: 820px;
+    }
+    .img-background {
+        width: 800px;
+        height:149px;
+    }
+    .style-of-register-p {
+        margin: 0;
+        margin-top: 19px;
+        margin-left: 20px;
+        font-size: 23px;
+    }
+    .description-width-height {
+        height: 200px;
+        width: 800px;
+    }
+    .general-syleOFinput {
+        border: 1px solid #6364645c;
+        height: 35px;
+        width: 210px;
+    }
+    .container-info-description {
+        width: 309px;
+        height: 100%;
+        margin-left: 15px;
+    }
+    .img-container {
+        height: 100%;
+        background-color: black;
+        width: 250px;
+        margin-left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .padding-h2-size {
+        margin-top: 0px;
+    }
+    .size-email-text {
+        font-size: 9px;
+    }
+    .img-description-style {
+        height: auto;
+        width: auto;
+        max-width: 124px !important;
+        max-height: 100% !important;
+    }
+    .img-background {
+        display: none;
+    }
+    .container-info-description {
+        width: 415px;
+        height: 100%;
+        margin-left: 20px;
+    }
+    .description-width-height {
+        height: 200px;
+        width: 670px;
+    }
+    .description-text {
+        width: 250px;
+        height: 100px;
+    }
+    .style-text-description {
+        color: rgb(156, 156, 156);
+        margin-bottom: 0 !important;
+        font-size: 14px;
+    }
+    .general-syleOFinput {
+        border: 1px solid #6364645c;
+        height: 35px;
+        width: 180px;
+    }
+    .div-form-searc-dog {
+        width: 700px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .img-description-style {
+        height: auto;
+        width: auto;
+        max-width: 118px !important;
+        max-height: 100% !important;
+    }
+    .div-form-searc-dog {
+        width: 600px;
+    }
+    .general-syleOFinput {
+        border: 1px solid #6364645c;
+        height: 35px;
+        width: 150px;
+    }
+    .description-width-height {
+        height: 200px;
+        width: 580px;
+    }
+    .description-text {
+        width: 175px;
+        height: 80px;
+    }
+    .style-text-description {
+        color: rgb(156, 156, 156);
+        margin-bottom: 0 !important;
+    }
+    .dog-description {
+        margin-top: 30px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .size-email-text {
+        font-size: 15px;
+    }
+    .img-description-style {
+        height: auto;
+        width: auto;
+        max-width: 100% !important;
+        max-height: 100% !important;
+    }
+    .container-of-description {
+        height: 180px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dog-description {
+        width: 100%;
+        height: 495px;
+        display: flex;
+        justify-content: center;
+        margin-top: 200px;
+    }
+    .description-width-height {
+        height: 100%;
+        width: 335px;
+    }
+    .img-container {
+        height: 100%;
+        background-color: black;
+        width: 300px;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .container-description-text {
+        margin-left: 12px;
+    }
+    .save-container{
+        margin-right: -279px;
+        margin-top: -29px;
+    }
+    .container-info-description {
+        width: 305px;
+        height: 100%;
+        margin-left:0;
+    }
+    .padding-h2-size {
+        margin-top: -7px;
+    }
+    .container-email-number-description{
+            margin-top: 7px;
+        }
+    .description-text {
+        width: 316px;
+        height: 100px;
+        margin-top: 4px;
+    } 
+    .style-text-description {
+        color: rgb(156, 156, 156);
+        margin-bottom: 0 !important;
+        font-size: 17px;
+    }
+    .div-form-searc-dog {
+        width: 580px;
+        height: 300px;
+    }
+    .general-syleOFinput {
+        border: 1px solid #6364645c;
+        height: 35px;
+        width: 300px;
+    }
+    .style-form {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;
+        height: 100%;
+        flex-direction: column;
+    }
+    .div-form-searc-dog {
+        width: 335px;
+        height: 300px;
+    }
+    .btn-style-form{
+        width: 300px;
+    }
+    .button-position {
+        margin-top: 15px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .size-email-text {
+        font-size: 10px;
+    }
+    .description-width-height {
+        height: 100%;
+        width: 250px;
+    }
+    .img-container {
+        height: 100%;
+        background-color: black;
+        width: 210px;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .container-info-description {
+        width: 230px;
+        height: 100%;
+        margin-left: 0;
+    }
+    .container-description-text {
+        margin-left: 12px;
+        width: 240px;
+    }
+    .save-dog-div {
+        display: flex;
+        margin-right: 95px;
+    }
+    .description-text {
+        width: 229px;
+        height: 100px;
+        margin-top: 4px;
+    }
+    .style-text-description {
+        color: rgb(156, 156, 156);
+        margin-bottom: 0 !important;
+        font-size: 13px;
+    }
+    .font-queris{
+        font-size: 15px !important;
+    }
+    .div-form-searc-dog {
+        width: 250px;
+        height: 300px;
+    }    
+    .general-syleOFinput {
+        border: 1px solid #6364645c;
+        height: 35px;
+        width: 200px;
+    }
+    .btn-style-form {
+        width: 200px;
+    }
+    .save-container {
+        margin-right: -122px;
+        margin-top: -29px;
+        width: 0px;
+    }
+  }

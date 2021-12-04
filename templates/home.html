@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block head %}
+        <title>HelPets.com</title>
+    {% endblock head %}
+
+
+    {% block style %}
+        <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    {% endblock style %}
+ 
+    
+    
+        
+        {% block navbar %}
+            <div id="dogBack" class="dogBack">
+                {{ block.super }}
+        {% endblock navbar %} 
+
+
+
+{% block body %}   
+        <!------------------------------------- BODY ------------------------------------------------->
+  
+    <!-- SECTION 1 -->
+    <section>
+        <div class="sec1">
+            <div class="content-sec1">
+                <div class="topContent-sec1">
+                    <h1 class="animate__animated animate__fadeInLeft">Dove potrai donare una nuova vita ai nostri animali!</h1>
+                    <p class="p1 animate__animated animate__fadeInLeft">Hai un canile? Presentati qui e iniza a pubblicare gli annunci dei tuoi cuccioli sulla nostra piattaforma!</p> 
+                    <button class="btn btn-light animate__animated animate__fadeInUp" type="button">Scopri come</button>
+
+                    <div class="pp animate__animated animate__fadeInLeft">
+                        <p class="p2">+200</p>
+                        <p class="p3">Animali registrati ogni giorno</p>
+                    </div>
+
+                </div>
+                    
+                <div class="bottomContent-sec1">
+                    <button type="button" class="btn btn-light animate__animated animate__fadeInLeft animate__fast">Accedi</button>
+                    <button type="button" class="btn btn-warning animate__animated animate__fadeInRight">Registrati</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+
+    <!-- SECTION 2 -->
+    <section>
+        <div class="sec2">
+            <div class="text-sec2-box">
+                <div class="text-sec2">
+                    <h2 class="animate__animated animate__fadeInLeft animate__fast wow">Trova il tuo cucciolo che stai cercando</h2>
+                    <p class="animate__animated animate__fadeInLeftBig wow">Hai sempre voluto adottare un animale ma non hai mai trovato quello giusto per te?
+                        La tua ricerca è finita, ora puoi affidarti ad HelPets e regalare una famiglia al
+                        cucciolo dei tuoi sogni!
+                    </p>
+                </div>
+            </div>
+
+            <div class="img-sec2">
+                <img class="animate__animated animate__fadeInRight" alt="Image not found" src="{% static '/img/dogCatPhoto.png' %}">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 3 -->
+    <section>
+        <div class="h2-sec3">
+            <h2>Contattaci</h2>
+        </div>
+        <div class="sec3">
+
+            <div class="contact">
+                <form>
+                    <input placeholder="Email">
+                    <input placeholder="Nome e Cognome">
+                    <textarea placeholder="Scrivi qui..."></textarea>
+                    <button>INVIA</button>
+                </form>
+            </div>
+
+
+            <div class="info-sec3">
+                <h3>info:</h3>
+                <p>email: helpets@gmail.com</p>
+                <p>telofono: "da mettere"</p>
+                <p>instagram: helpets.com</p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section>
+        <div class="sec4">
+            <div class="text-sec4">
+                <h2 class="animate__animated animate__fadeInDown wow">Goditi l'imbarazzo della scelta</h2>
+                <p class="animate__animated animate__fadeInUp wow">Noi di HelPets sappiamo quanto può essere difficile trovare un compagno animale 
+                    per la propria famiglia, i propri figli, il proprio partner o semplicemente per se stessi.
+                    Con la nostra piattaforma potrai visitare virtualmente molti canili
+                    comodamente dal tuo dispositivo preferito.
+                </p>
+            </div>
+
+            <div class="img-sec4">
+                <div class="top-images-sec4">
+                    <img alt="Image not found" class="animate__animated animate__fadeInLeft wow" src="{% static '/img/doggo1-sec4.jpg' %}">
+                    <img alt="Image not found" class="animate__animated animate__fadeInLeft wow" src="{% static '/img/cat4-sec4.jpg' %}">
+                </div>
+
+                <div class="bottom-images-sec4"> 
+                    <img alt="Image not found" class="animate__animated animate__fadeInRight wow" src="{% static '/img/dogs3-sec4.jpg' %}">
+                    <img alt="Image not found" class="animate__animated animate__fadeInRight wow" src="{% static '/img/cats2-sec4.jpg' %}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section>
+        <div class="sec5">
+            <h2>Salva una vita animale adottando un cucciolo da noi</h2>
+            <p>Grazie alla nostra rete di collaboratori, su HelPets potrai cercare tra centinaia di cani e gatti presso differenti canili. 
+                I nostri amici animali sono stati salvati dalla vita da randagio e ora aspettano di venire adottati e coccolati.
+                Sei un genitore di famiglia e i tuoi bambini vorrebbero un cane o un gatto da amare? Affidati e noi, cerca nella nostra
+                rete e adotta un amico animale per la tua famiglia.</p>
+        </div>
+        <audio id="myAudio" src="{% static '/img/Aria pulita (mp3cut.net).mp3' %}"></audio>
+    </section>
+
+
+
+
+    <!------------------------------------- END BODY ------------------------------------------------->
+
+    
+{% endblock body %}
+
+
+    
+
+
+
+
+
+

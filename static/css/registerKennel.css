@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('../font/trebuc.woff');
+}
+
+@font-face {
+    font-family: 'Doppio One';
+    src: url('../font/DoppioOne-Regular.woff');
+}
+
+.kennelInputContainer
+{
+    display: flex;
+    justify-content: center;
+}
+
+.formContainer
+{
+    width: 70%;
+    height: 110%;
+
+    margin-right: 50px ;
+}
+
+.formContainer>h2, .loginText>h2
+{
+    font-size: 45px;
+}
+
+.loginText>p
+{
+    font-size: 32px;
+}
+
+.inputContainer>input
+{
+    font-size: 25px;
+    height: 60px;
+}
+
+.inputButton {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    height: 35%;
+}
+
+.registerButton 
+{
+    background-color: #E6B141;
+    border-radius: 10px;
+    width: 45%;
+    height: 80px;
+}
+
+@media only screen and (max-width: 1200px) 
+{
+
+    .formContainer
+    {
+        width: 85%;
+    }
+
+    .inputContainer>input {
+        font-size: 20px;
+    }
+
+    .formContainer>h2, .loginText>h2
+    {
+        font-size: 35px;
+    }
+
+    .loginText>p
+    {
+        font-size: 27px;
+    }
+
+} 
+
+@media only screen and (max-width: 980px) 
+{
+    .inputButton {
+        display: flex;
+        
+        align-items: center;
+        flex-direction: column;
+        
+        height: 35%;
+    }
+}
+

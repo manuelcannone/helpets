@@ -1,0 +1,292 @@
+{% load static %}
+
+<html lang="en">
+<head>
+
+{% comment %}
+    THE BASE IS FORMED BY THE FOLLOWING BLOCK:
+
+    {% block seo %}
+    {% block head %}
+    {% block baseStyle %}
+    {% block style %}
+    {% block navbar %}
+    {% block body %}
+    {% block footer %}
+    {% block scriptBase %}
+    {% block script %}
+{% endcomment %}
+    
+ 
+
+    {% block seo %}
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock seo %}
+        
+    
+    {% block head %}
+        <title>HelPets | Base</title>
+    {% endblock head %}
+        
+    
+    
+    {% block baseStyle %}
+        <link rel="stylesheet" href="{% static '/css/base.css' %}">
+        <link rel="stylesheet" href="{% static '/dependancy/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static '/dependancy/animate.min.css' %}">
+    {% endblock baseStyle %}
+        
+    
+    {% block style %}
+        
+    {% endblock style %}
+        
+
+    
+
+</head>
+<body>
+    
+    {% block navbar %}
+            
+        <!-- Navbar -->
+        <div class="navbar">
+            <nav role="navigation">
+                <div id="menuToggle">
+            
+                <input type="checkbox" />
+                
+                <span></span>
+                <span></span>
+                <span></span>
+                
+             
+                    
+                <ul id="menu">
+                    <a href="{% url 'home' %}"><li><b>Home</b></li></a>
+
+                  
+                    {% if user.is_authenticated %}
+                        <a href="#"><li><b>Account</b></li></a>
+                        <a href="#"><li><b>Logout</b></li></a>
+                    {% else %}
+                        <a href="#"><li><b>Accedi</b></li></a>
+                        <a href="{% url 'register' %}"><li><b>Registrati</b></li></a>
+                    {% endif %}
+                    
+                    
+                    <a class="menu-search-a" href="#"><li><b>Cerca<img src="{% static '/img/search.png' %}"></b></li></a>
+                    <a href="#"><li class="saves-li"><b>Inserisci annuncio</b></li></a>
+                    <a href="{% url 'search' %}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="saves-li"><img alt="image not found" src="{% static '/img/bookmark.png' %}"></li></a>
+                </ul>
+                </div>
+            </nav>
+
+            <div class="p-menu">
+                <p>Menù</p>
+            </div>
+
+            <div class="leftContent-nav">
+                <div class="navLogo">
+                    <div class="imgBack">
+                        <img alt="image not found" src="{% static '/img/logoHelPets.png' %}">
+                    </div>
+                    <p>HelPets.com</p>
+                </div>
+
+
+                <div class="navItems">
+                    <a href="{% url 'home' %}"><p>Home</p></a>
+
+                    {% if user.is_authenticated %}
+    
+                    <a href="#"><p>Account</p></a>
+                    <a href="#"><p>Logout</p></a>
+                    {% else %}
+                        <a href="#"><p>Accedi</p></a>
+                        <a href="{% url 'register' %}"><p>Registrati</p></a>
+                    {% endif %}
+              
+                    <a id="search-a" href="{% url 'search' %}"><img src="{% static '/img/search.png' %}"></a>
+                </div>
+            </div>
+
+
+            <div class="rightContent-nav animate__animated animate__fadeInRight">
+
+                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <div class="saves">
+                        <img alt="image not found" src="{% static '/img/bookmark.png' %}">
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="addAnnouncement">
+                        <img alt="image not found" src="{% static '/img/plus.png' %}">
+                        <p>Inserisci annuncio</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+   
+
+
+
+
+
+
+    <!-- saved announcement list -->
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">Annunci salvati</h5>
+            <img class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" src="{% static '/img/close.png' %}">
+        </div>
+
+        <div class="offcanvas-body">
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="{% static '/img/saveAnnouncementDog.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="{% static '/img/saveAnnouncementDog.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="{% static '/img/saveAnnouncementDog.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="{% static '/img/saveAnnouncementDog.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="{% static '/img/saveAnnouncementDog.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <a href="#"><button class="removeButton">Rimuovi</button></a>
+                </div>
+            </div>
+
+            <div class="save-announcement">
+                <div class="img-save-announcement-box">
+                    <div class="img-save-announcement">
+                        <img alt="image not found" src="{% static '/img/saveAnnouncementDog.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="save-announcement-buttons">
+                    <a href="#"><button class="visitButton">Visita</button></a>
+                    <form><button class="removeButton">Rimuovi</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock navbar %}
+    
+
+    
+    {% block body %}
+        
+    {% endblock body %}
+        
+
+    
+    {% block footer %}
+        
+    
+        <!-- Footer -->
+        <div class="footer">
+            <div class="info">
+                <h2>info:</h2>
+                <p>Email: helpets@gmail.com</p>
+                <p>Telofono: "da mettere"</p>
+                <p>Instagram: helpets.com</p>
+
+            </div>
+
+            <div class="terms">
+                <h2>terms:</h2>
+                <a href="#"><p>Termini e condizi</p></a>
+                <a href="#"><p>Assistenza</p></a>
+            </div>
+
+            <div class="logoFooter">
+                <div class="navLogo">
+                    <div class="imgBack">
+                        <img alt="image not found" src="{% static '/img/logoHelPets.png' %}">
+                    </div>
+                    <p>HelPets.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="develope">
+            <p>Sito sviluppato da <a href="https://www.jready.it/" target="_blank"><span><span id="Jspan">J</span>ready</span></a></p>
+        </div>
+    {% endblock footer %}
+    
+    
+    {% block scriptBase %}
+       
+        <script src="{% static '/dependancy/bootstrap.min.js' %}"></script>
+        <script src="{% static '/dependancy/jquery.js' %}"></script>
+        <script src="{% static '/dependancy/wow.min.js' %}"></script>
+
+        
+    
+        <script>
+            new WOW().init();
+        </script>
+
+    {% endblock scriptBase %}
+
+    
+    {% block script %}
+        
+    {% endblock script %}
+        
+</body>
+</html>

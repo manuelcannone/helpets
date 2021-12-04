@@ -1,0 +1,416 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Trebuchet MS';
+    src: url('../font/trebuc.woff');
+}
+
+@font-face {
+    font-family: 'Doppio One';
+    src: url('..//font/DoppioOne-Regular.woff');
+}
+
+body
+{
+    width: 100%;
+    height: 100%;
+
+    
+
+    /* font-family: 'Trebuchet MS';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Trebuchet MS'), url('trebuc.woff') format('woff'); */
+}
+
+.whiteContainer
+{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer
+{
+    display: flex;
+    background: rgb(222,159,16);
+    background: linear-gradient(90deg, rgba(222,159,16,1) 0%, rgba(255,187,0,1) 100%);;
+
+    height: 700px;
+    width: 80%;
+}
+
+.loginText
+{
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px;
+}
+
+.loginText>p
+{
+    font-size: 40px;
+    
+    width: 75%;
+}
+
+.loginText>h2
+{
+    font-size: 60px;
+    
+    width: 75%;
+}
+
+.FormContainerMobile
+{
+    display: none;
+}
+
+.formContainer
+{
+    background-color: #F2F2F2; /*#DE9F10*/
+    width: 35%;
+    height: 770px;
+    margin-top: -40px;
+    border: gray 1px solid;
+
+    margin-right: 50px ;
+}
+
+.formContainer>p
+{
+    text-align: center;
+}
+
+.registerAccessButtons
+{
+    height: 80px;
+    width: 300px;
+}
+
+.registerAccessButtons>p
+{
+    color: #ffff;
+    background-color: #FFBB00;
+
+    font-size: 40px;
+    border: rgb(255, 255, 255) 1px solid;
+
+    width: 342px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.formContainer>h2
+{
+    font-size: 60px;
+    text-align: center;
+
+    margin: 70px
+;
+}
+
+/* .regField>input
+{
+    height: 40px;
+    width: 85%;
+
+    margin: 15px;
+
+    border-radius: 5px;
+
+    font-size: 20px;
+} */
+
+/* .regField
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.buttonContainer
+{
+    width: 75%;
+}
+
+.inputContainer
+{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputContainer>p
+{
+    margin-top: 15px ;
+}
+
+.inputContainer>input
+{
+
+    width: 75%;
+    height: 70px;
+    margin: 10px;
+
+    border-radius: 10px;
+    border: none;
+
+    font-size: 30px;
+
+    padding-left: 15px;
+
+    border: gray 1px solid;
+}
+
+.textContainer
+{
+    margin: 10px;
+    display: flex;
+    width: 75%;
+    align-items: center;
+}
+
+.textContainer>p
+{
+    margin-left: 10px;
+}
+
+.inputButton
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputButton>button
+{
+    margin: 10px;
+}
+
+#hiddenParagraph
+{
+    display: none;
+}
+
+
+.button
+{
+    width: 200px;
+    color: white;
+    height: 65px;
+    background: none;
+    font-size: 30px;
+    border: white 1px solid;
+}
+
+.registerButton
+{
+    background-color: #E6B141;
+    border-radius: 10px;
+
+    width: 80%;
+    height: 80px;
+}
+
+.button>p
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*Media queries!*/
+
+@media only screen and (max-width: 1520px) 
+{
+
+    .loginContainer
+    {
+    width: 90%;
+    }
+
+    .loginText
+    {
+    margin: 0px;
+    }
+
+    .loginText>p
+    {
+    font-size: 40px;
+    }
+
+    .loginText>h2
+    {
+    font-size: 50px;
+    }
+
+    .registerAccessButtons>p 
+    {
+        color: #ffff;
+        background-color: #FFBB00;
+        font-size: 45px;
+        border: rgb(255, 255, 255) 1px solid;
+        width: 250px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .formContainer>h2 
+    {
+        font-size: 55px;
+        text-align: center;
+        margin: 40px;
+    }
+
+    .inputContainer>input 
+    {
+        height: 60px;
+        font-size: 30px;
+        border: gray 1px solid;
+    }
+} 
+
+@media only screen and (max-width: 1290px) 
+{
+
+    .formContainer
+    {
+        width: 45%;
+    }
+
+    .formContainer>h2 
+    {
+        font-size: 55px;
+        text-align: center;
+        margin: 40px;
+    }
+
+    .inputContainer>input 
+    {
+        height: 60px;
+        font-size: 30px;
+        border: gray 1px solid;
+    }
+} 
+
+@media only screen and (max-width: 1200px) 
+{
+
+    .loginText>p
+    {
+    font-size: 30px;
+    }
+
+    .loginText>h2
+    {
+    font-size: 45px;
+    }
+
+    .registerAccessButtons>p 
+    {
+        color: #ffff;
+        background-color: #FFBB00;
+        font-size: 30px;
+        border: rgb(255, 255, 255) 1px solid;
+        width: 250px;
+        height: 100px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .formContainer>h2 
+    {
+        font-size: 55px;
+        text-align: center;
+        margin: 40px;
+    }
+
+    .inputContainer>input 
+    {
+        height: 60px;
+        font-size: 20px;
+        border: gray 1px solid;
+    }
+
+    .formContainer
+    {
+        width: 55%;
+    }
+} 
+
+@media only screen and (max-width: 980px) 
+{
+
+    body
+    {
+        height: 800px;
+    }
+
+    .loginText
+    {
+        display: none;
+    }
+
+    .loginContainer
+    {
+        display: none;
+    }
+
+    .formContainer
+    {
+        width: 90% ;
+    }
+
+    .FormContainerMobile
+    {
+        display: flex !important;
+        width: 80%;
+        margin: 0;
+        justify-content: center;
+    }
+} 
+
+@media only screen and (max-width: 980px) 
+{
+
+    .FormContainerMobile
+    {
+        display: flex !important;
+        width: 95%;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .formContainer
+    {
+        margin: 0 !important;
+    }
+} 

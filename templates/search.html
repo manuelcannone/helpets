@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block head %}
+        <title>select Pets</title>
+    {% endblock head %}
+
+
+    <!-- <link rel="icon" href="{% static '/img/1.png' %}" type="image"> -->
+    
+
+    {% block style %}
+    <link rel="stylesheet" href="{% static '/css/search.css' %}">
+    {% endblock style %}
+ 
+
+
+    
+    {% block body %}
+        
+   
+    <!-- section if the form -->
+    <section class="conainer-form">
+        <div class="div-form-searc-dog">
+            <form method="POST" class="style-form">
+                {% csrf_token %}
+
+                <div class="first-input">
+                    <label for="#" class="style-label">Città:</label><br>
+                    <input type="text" id="icon-1-style" name="city" class="general-syleOFinput"/>
+                </div>
+                
+                <div class="third-input">
+                    <label for="#" class="style-label">Categoria:</label><br>
+                    <input type="text"  id="icon-3-style" name="category" class="general-syleOFinput"/>
+    
+                </div> 
+
+                <div class="second-input">
+                    <label for="#" class="style-label">Taglia:</label><br>
+                    <select name="size" id="icon-2-style" class="general-syleOFinput">
+                        <option class="disabled" disabled selected value></option>
+                        <option value="big">Grande</option>
+                        <option value="medium">Media</option>
+                        <option value="small">Piccola</option>
+                    </select>
+                </div>
+
+             
+                <div class="button-position">
+                    <button type="submit" class="btn btn-style-form">Cerca</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- section img-dog-login -->
+    <section class="img-login">
+        <div class="img-background">
+            <div class="div-register-text">
+            <p class="style-of-register-p">Registrati o accedi per usufruire<br>al meglio del nostro servizio </p>
+            </div>
+            <div class="button-of-register">
+                <button class="btn buttonStyleRegister">Login</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+    {% for post in posts %}
+
+    <!-- section description of dog -->
+    <section class="dog-description">
+        <a class="removeDecoration" href="post/{{post.id}}"> 
+            <div class="description-width-height">
+                <div class="container-of-description">
+                <div class="img-container">
+                    <img class="img-description-style" src="{{ MEDIA_URL }}{{post.img1}}"  alt="photo animal" href="#">
+               </div>
+                <div class="container-description-text"> 
+                <div class="description-text">
+                    <h2 class="h2-general-style" href="#">Descrizione:</h2>
+                    <p href="#" maxlength="50" class="style-text-description removeExcessText">{{post.description}}...</p>
+                </div>
+                <div class="description-size">
+                    <h2 class="h2-general-style padding-h2-size">Taglia:</h2>
+                    <p class="style-text-description font-queris">{{post.size}}</p>
+                </div>
+            </div>
+            <div class="container-info-description">
+                <div class="container-email-number-description">
+                    <h2 class="h2-general-style">Città:</h2>
+                    <p class="style-text-city">{{post.city}}</p>
+                </div>
+                <div class="email-number">
+                    {% if post.kannel.cap %}
+                    <p class="email-number-style"><img class="img-style-email-number" src="{% static '/img/telephone.png' %}" alt="phone">{{post.kannel.cap}}</p>
+            
+                {% else %}
+                    <p class="email-number-style"><img class="img-style-email-number" src="{% static '/img/telephone.png' %}" alt="phone">Non disponibile</p>
+            
+                {% endif %}
+                <p class="email-number-style size-email-text"><img class="img-style-email-number" src="{% static '/img/email-icon.png' %}" alt="email">nomeutentecogno@gmail.com</p>
+              </div>
+            </div>
+            <div class="save-container">
+                <div class="save-dog-div">
+
+                    <form action="/ppp" id="imgClickForSave{{post.id}}Form" method="post">
+                        {% csrf_token %}
+                        <input type="text" value="{{post.id}}" style="display: none;">
+                        <img class="img-style-email-number" id="imgClickForSave{{post.id}}" src="{% static '/img/save-empty.png' %}" alt="save">
+                    </form>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </a>
+    </section>
+    {% endfor %}
+        
+
+{% endblock body %}
+
+{% block script %}
+
+<script>
+
+    $(".img-style-email-number").click((e) =>{ 
+      
+        $("#"+ e.target.id + "Form").submit()
+    })
+
+</script>
+
+{% endblock script %}
+        
