@@ -45,5 +45,6 @@ class SetNotificationAdmin(admin.ModelAdmin):
 
 admin.site.register(db.Kennel, KennelAdmin)
 admin.site.register(db.City, cityAdmin)
+admin.site.register(db.IsKennel)
 
 admin.site.register(db.SetNotification,SetNotificationAdmin)

@@ -10,12 +10,12 @@
   
     {% block style %}
          <link rel="stylesheet" href="{% static '/css/auth.css' %}">
+         <link rel="stylesheet" href="{% static '/css/register.css' %}">
     {% endblock style %}
 
 
 {% block body %}
  
-    
     <!-- START BODY -->
 
     <div class="whiteContainer">
@@ -32,52 +32,71 @@
 
             </div>
 
-             <div class="formContainer">
-                <form method="POST">
-                    {% csrf_token %}
+                <div class="formContainer">
                     <h2>Registrati</h2>
-                    <p id="hiddenParagraph"> <a href="#">Errore la mail non esiste!</a> </p>
-                    <div class="inputContainer">
-                            <input type="email" name="email" placeholder="E-mail">
-                            <input type="password" name="password" placeholder="Password">
-                            <input type="text"  placeholder="Username">
-                            <input type="text" placeholder="Città">
+                    <div id="hiddenContainer" >
 
-                            <div class="textContainer">
-                                <p> <a href="#"> se possiedi un canile clicca qui </a></p>
-                            </div>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    {% if message.tags == "error" %}
+                                        
+                                            <p>{{message}}</p>
+                                        
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                          
+                           
                     </div>
-                    <div class="inputButton">
-                        <button class="button registerButton" >Accedi</button>
+                    <div class="inputContainer">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <input type="email" name="username" placeholder="E-mail">
+                                <input type="text" name="password1" placeholder="Password">
+                                <input type="text" name="password2" placeholder="Password repeat">
+                                <input type="text" name="city" placeholder="Città">
+                             
+                                <div class="textContainer">
+                                    <p> <a href="#"> se possiedi un canile clicca qui </a></p>
+                                </div>
+                            
+                                <div class="inputButton">
+                                    <button  type="submit" class="button registerButton" >Accedi</button>
+                                </div>
+
+                            </form>
                     </div>
                 </div>
-            </form>
+            
         </div>
 
         <div class="FormContainerMobile">
-            <form action="">
+            <div class="formContainer">
+                <h2>Registrati</h2>
+                <div id="hiddenContainer" >
+                    <p>Errore la mail non esiste!</p>
+                    </div>
+                <div class="inputContainer">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="email" name="username" placeholder="E-mail">
+                        <input type="text" name="password1" placeholder="Password">
+                        <input type="text" name="password2" placeholder="Password repeat">
+                        <input type="text" name="city" placeholder="Città">
+                     
+                        <p> <a href="#"> se possiedi un canile clicca qui </a></p>
                 
-                <div class="formContainer">
-                    <h2>Registrati</h2>
-                    <p id="hiddenParagraph" >Errore la mail non esiste!</p>
-                    <div class="inputContainer">
-                            <input type="email" placeholder="E-mail">
-                            <input type="password" placeholder="Password">
-                            <input type="text" placeholder="Username">
-                            <input type="text" placeholder="Ripeti password">
-                        
-                            <p> <a href="#"> se possiedi un canile clicca qui </a></p>
-                    </div>
-                    <div class="inputButton">
-                        <button class="button registerButton">Accedi</button>
-                    </div>
-                </div>
-            </form>
+                        <div class="inputButton">
+                            <button class="button registerButton">Accedi</button>
+                        </div>
+
+                    </form>
+
+        </div>
+            </div>
         </div>
 
     </div>
-<!-- END BODY -->
-
 
      
 {% endblock body %}

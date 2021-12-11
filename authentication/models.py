@@ -1,9 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate, logout
+
 from .views import sendNotify
 
 from django.conf import settings
+
+from django.db import models
+
+ 
 
 
 class City(models.Model):
@@ -126,3 +130,10 @@ class SetNotification(models.Model):
         verbose_name = "Notifiche gestionale"
 
 
+
+class IsKennel(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True) 
+    IsKennel = models.BooleanField(verbose_name="Kennel checked")
+    
+    class Meta():
+        verbose_name = "Utenti Canili"

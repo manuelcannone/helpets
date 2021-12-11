@@ -8,10 +8,27 @@
     src: url('../font/DoppioOne-Regular.woff');
 }
 
+a
+{
+    text-decoration: none !important;
+}
+
+.inputContainer
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .kennelInputContainer
 {
     display: flex;
     justify-content: center;
+}
+
+.textContainer>p
+{
+    margin-bottom: 0;
 }
 
 .formContainer
@@ -27,24 +44,41 @@
     font-size: 45px;
 }
 
+.formContainer>h2
+    {
+        margin: 20px;
+    }
+
 .loginText>p
 {
-    font-size: 32px;
+    font-size: 22px;
 }
 
-.inputContainer>input
-{
-    font-size: 25px;
-    height: 60px;
-}
+
+    .inputContainer>input {
+        width: 90%;
+        height: 50px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+        font-size: 30px;
+        padding-left: 15px;
+        border: gray 1px solid;
+    }
 
 .inputButton {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
+    height: 16%;
 
-    height: 35%;
+    margin: 0 auto;
+}
+
+#hiddenContainer>p
+{
+    width: 90%;
 }
 
 .registerButton 
@@ -55,12 +89,13 @@
     height: 80px;
 }
 
-@media only screen and (max-width: 1200px) 
+@media only screen and (max-width: 1300px) 
 {
 
     .formContainer
     {
         width: 85%;
+        margin: 0;
     }
 
     .inputContainer>input {
@@ -69,12 +104,23 @@
 
     .formContainer>h2, .loginText>h2
     {
-        font-size: 35px;
+        font-size: 30px;
     }
+
+    .textContainer
+    {
+        width: 90%;
+    }    
+
 
     .loginText>p
     {
-        font-size: 27px;
+        font-size: 20px;
+    }
+
+    .registerButton
+    {
+        width: 60%;
     }
 
 } 
@@ -88,6 +134,16 @@
         flex-direction: column;
         
         height: 35%;
+    }
+
+    .registerButton
+    {
+        width: 80%;
+    }
+
+    .formContainer>h2
+    {
+        font-size: 40px;
     }
 }
 

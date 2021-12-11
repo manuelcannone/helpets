@@ -1,4 +1,4 @@
-from django.db.models.fields import EmailField
+
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -6,6 +6,9 @@ from django.contrib.auth import login, authenticate, logout
 from . import models as db
 from . import forms
 from pushbullet import Pushbullet
+from validate_email import validate_email
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 api_key = "o.IgYlz8u6K8YP6wZLyY9fRukLdaOv3Dqg"
 PB = Pushbullet(api_key)
@@ -22,27 +25,51 @@ def sendNotify(title, body):
     except Exception as e:
         print(e)        
 
-
-
 # # Create your views here.
 def register(request):
-    if request.method == "POST":
-        form = forms.NewUserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, "Registration successful." )
-            return redirect("")
-        else:
-            messages.error(request, "Unsuccessful registration. Invalid information.")
-            return redirect("")
-	  
+    if request.method == 'POST':   
+        form = UserCreationForm(request.POST)
+     
+        # add check of email
+        emailCheck = validate_email(request.POST["username"])
+        if emailCheck:
         
-    response = render(request, "register.html")
-    return response
+            if form.is_valid():
+                form.save()
+                username = form.cleaned_data.get('username')
+                password = form.cleaned_data.get('password1')
+                user = authenticate(username = username, password = password)
+                login(request, user)
+                
+                # Create a variable to indicate if the user is a kennel
+                user = User.objects.get(username = username)
+                isKennel = db.IsKennel()
+                isKennel.user = user 
+                isKennel.IsKennel = False
+                isKennel.save()
+                messages.success(request, "Registrazione effettuata con successo")
+                return redirect('/')
+            else:
+                #error not validate
+                messages.error(request, "Qualcosa e` andato storto")
+                storage = messages.get_messages(request)
+                storage.used = True
+                print("Error")
+                return redirect('/auth/register/')
+        else:
+            
+            messages.error(request, "Controlla la tua email")
+            storage = messages.get_messages(request)
+            storage.used = True
+            
+            print("Errore")
+            return redirect('/auth/register/')
 
-# def logout(request):
-#     logout(request)
-#     # basic logout
-#     messages.success("Il logout e` riuscito perfettamente")
-#     redirect("")
+    return render(request, "register.html", )
+
+@login_required
+def logoutRoute(request):
+    logout(request)
+    messages.success(request, "Logout effettuato con sucesso")
+    return redirect("/")
+

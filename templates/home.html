@@ -144,11 +144,37 @@
     
 {% endblock body %}
 
+{% block script %}
+        
+    <script src="{% static 'dependancy/sweetalert2.all.min.js' %}"></script>
 
+   
+        {% if messages %}
+            {% for message in messages %}
+        
+            <script>
+                $(window).on('load', function () {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: "{{message}}",
+                    showConfirmButton: false,
+                    timer: 2500
+                })
     
+                })
+            </script>
+        
+            {% endfor %}
+                
+    
+        {% endif %}
+        
+    
+        
 
 
-
+{% endblock script %}
 
 
 

@@ -67,19 +67,19 @@
                 <ul id="menu">
                     <a href="{% url 'home' %}"><li><b>Home</b></li></a>
 
-                  
+                 
                     {% if user.is_authenticated %}
                         <a href="#"><li><b>Account</b></li></a>
-                        <a href="#"><li><b>Logout</b></li></a>
+                        <a href=" {% url 'logout' %}"><li><b>Logout</b></li></a>
                     {% else %}
                         <a href="#"><li><b>Accedi</b></li></a>
                         <a href="{% url 'register' %}"><li><b>Registrati</b></li></a>
                     {% endif %}
                     
                     
-                    <a class="menu-search-a" href="#"><li><b>Cerca<img src="{% static '/img/search.png' %}"></b></li></a>
+                    <a class="menu-search-a" href="{% url 'search' %}"><li><b>Cerca<img src="{% static '/img/search.png' %}"></b></li></a>
                     <a href="#"><li class="saves-li"><b>Inserisci annuncio</b></li></a>
-                    <a href="{% url 'search' %}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="saves-li"><img alt="image not found" src="{% static '/img/bookmark.png' %}"></li></a>
+                    <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="saves-li"><img alt="image not found" src="{% static '/img/bookmark.png' %}"></li></a>
                 </ul>
                 </div>
             </nav>
@@ -103,7 +103,7 @@
                     {% if user.is_authenticated %}
     
                     <a href="#"><p>Account</p></a>
-                    <a href="#"><p>Logout</p></a>
+                    <a href=" {% url 'logout' %}"><p>Logout</p></a>
                     {% else %}
                         <a href="#"><p>Accedi</p></a>
                         <a href="{% url 'register' %}"><p>Registrati</p></a>

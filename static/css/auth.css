@@ -37,7 +37,7 @@ body
 .whiteContainer
 {
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     display: flex;
     justify-content: center;
@@ -50,30 +50,30 @@ body
     background: rgb(222,159,16);
     background: linear-gradient(90deg, rgba(222,159,16,1) 0%, rgba(255,187,0,1) 100%);;
 
-    height: 700px;
-    width: 80%;
+    height: 550px;
+    width: 70%;
 }
 
 .loginText
 {
-    width: 850px;
+    width: 750px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 30px;
+    margin: 20px;
 }
 
 .loginText>p
 {
-    font-size: 40px;
+    font-size: 30px;
     
     width: 75%;
 }
 
 .loginText>h2
 {
-    font-size: 60px;
+    font-size: 50px;
     
     width: 75%;
 }
@@ -86,9 +86,9 @@ body
 .formContainer
 {
     background-color: #F2F2F2; /*#DE9F10*/
-    width: 35%;
-    height: 770px;
-    margin-top: -40px;
+    width: 40%;
+    height: 600px;
+    margin-top: -25px;
     border: gray 1px solid;
 
     margin-right: 50px ;
@@ -122,10 +122,10 @@ body
 
 .formContainer>h2
 {
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
 
-    margin: 70px
+    margin: 30px
 ;
 }
 
@@ -153,35 +153,32 @@ body
     width: 75%;
 }
 
-.inputContainer
-{
-    height: 50%;
+
+.inputContainer>form {
+
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
+
 
 .inputContainer>p
 {
     margin-top: 15px ;
 }
 
-.inputContainer>input
+form>input
 {
-
-    width: 75%;
-    height: 70px;
-    margin: 10px;
-
-    border-radius: 10px;
-    border: none;
-
-    font-size: 30px;
-
-    padding-left: 15px;
-
-    border: gray 1px solid;
+    
+        width: 70%;
+        height: 60px;
+        margin: 7px;
+        border-radius: 10px;
+        border: none;
+        font-size: 30px;
+        padding-left: 15px;
+        border: gray 1px solid;
+    
 }
 
 .textContainer
@@ -202,6 +199,7 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 80%;
 }
 
 .inputButton>button
@@ -209,9 +207,17 @@ body
     margin: 10px;
 }
 
-#hiddenParagraph
+#hiddenContainer>p
+{
+    color: red;
+    width: 70%;
+}
+
+#hiddenContainer
 {
     display: none;
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -246,101 +252,53 @@ body
 
 /*Media queries!*/
 
-@media only screen and (max-width: 1520px) 
+@media only screen and (max-width: 1740px) 
 {
-
-    .loginContainer
-    {
-    width: 90%;
-    }
-
-    .loginText
-    {
-    margin: 0px;
-    }
-
-    .loginText>p
-    {
-    font-size: 40px;
-    }
-
-    .loginText>h2
-    {
-    font-size: 50px;
-    }
-
-    .registerAccessButtons>p 
-    {
-        color: #ffff;
-        background-color: #FFBB00;
-        font-size: 45px;
-        border: rgb(255, 255, 255) 1px solid;
-        width: 250px;
-        height: 100px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
-
-    .formContainer>h2 
-    {
-        font-size: 55px;
-        text-align: center;
-        margin: 40px;
-    }
-
-    .inputContainer>input 
-    {
-        height: 60px;
-        font-size: 30px;
-        border: gray 1px solid;
-    }
-} 
-
-@media only screen and (max-width: 1290px) 
-{
-
-    .formContainer
-    {
-        width: 45%;
-    }
-
-    .formContainer>h2 
-    {
-        font-size: 55px;
-        text-align: center;
-        margin: 40px;
-    }
-
-    .inputContainer>input 
-    {
-        height: 60px;
-        font-size: 30px;
-        border: gray 1px solid;
-    }
-} 
-
-@media only screen and (max-width: 1200px) 
-{
-
-    .loginText>p
-    {
-    font-size: 30px;
-    }
 
     .loginText>h2
     {
     font-size: 45px;
     }
 
-    .registerAccessButtons>p 
+    .formContainer
+    {
+        width: 55%;
+    }
+
+} 
+
+
+@media only screen and (max-width: 1470px) 
+{
+
+    /* .loginText>p
+    {
+    font-size: 25px;
+    } */
+
+    .loginText>h2
+    {
+    font-size: 40px;
+    }
+
+    .loginText>p
+    {
+        font-size: 25px;
+    }
+
+    .formContainer
+    {
+        width: 60%;
+    }
+
+    /* .registerAccessButtons>p 
     {
         color: #ffff;
         background-color: #FFBB00;
-        font-size: 30px;
+        font-size: 20px;
         border: rgb(255, 255, 255) 1px solid;
-        width: 250px;
-        height: 100px;
+        width: 150px;
+        height: 50px;
         align-items: center;
         display: flex;
         justify-content: center;
@@ -348,33 +306,62 @@ body
 
     .formContainer>h2 
     {
-        font-size: 55px;
+        font-size: 45px;
         text-align: center;
         margin: 40px;
     }
 
     .inputContainer>input 
     {
-        height: 60px;
-        font-size: 20px;
+        height: 46px;
+        font-size: 25px;
         border: gray 1px solid;
     }
 
     .formContainer
     {
-        width: 55%;
-    }
+        width: 60%;
+    } */
 } 
 
-@media only screen and (max-width: 980px) 
+@media only screen and (max-width: 1400px) 
 {
+
+    .formContainer
+    {
+        width: 65%;
+    }
+
+    .loginText>h2 {
+        font-size: 37px;
+    }
+
+    .loginText>p {
+        font-size: 23px;
+    }
+
+} 
+
+@media only screen and (max-width: 1305px) 
+{
+
+    .formContainer
+    {
+        width: 90%;
+        margin: 0;
+    }
+
+    form>input
+    {
+        font-size: 25px;
+    }
 
     body
     {
         height: 800px;
     }
 
-    .loginText
+     .loginText
     {
         display: none;
     }
@@ -384,33 +371,60 @@ body
         display: none;
     }
 
-    .formContainer
-    {
-        width: 90% ;
-    }
 
     .FormContainerMobile
     {
         display: flex !important;
-        width: 80%;
+        width: 100%;
         margin: 0;
         justify-content: center;
+    }
+
+    form>input {
+    width: 90%;
+    height: 75px;
+    margin: 7px;
+    border-radius: 10px;
+    border: none;
+    font-size: 30px;
+    padding-left: 15px;
+    border: gray 1px solid;
+    }
+
+    #hiddenContainer>p {
+        width: 90%;
+    }
+
+    .registerButton {
+        background-color: #E6B141;
+        border-radius: 10px;
+        width: 45%;
+        height: 80px;
+    }
+
+} 
+
+@media only screen and (max-width: 1000px) 
+{
+    form>input {
+        
+        font-size: 20px;
+        
     }
 } 
 
-@media only screen and (max-width: 980px) 
+@media only screen and (max-width: 550px) 
 {
-
-    .FormContainerMobile
+    .registerButton
     {
-        display: flex !important;
-        width: 95%;
-        margin: 0;
-        justify-content: center;
+        width: 65%;
     }
+} 
 
-    .formContainer
+@media only screen and (max-width: 380px) 
+{
+    .registerButton
     {
-        margin: 0 !important;
+        width: 75%;
     }
 } 

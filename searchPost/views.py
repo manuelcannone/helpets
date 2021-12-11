@@ -17,17 +17,24 @@ def search(request):
         # print(cityPOST, categoryPOST, sizePOST)
         # if cityPOST != "" or categoryPOST != "" or sizePOST != "":
         #     posts = db.Post.objects.filter( city = "")
-        if cityPOST or categoryPOST or sizePOST :
-             posts = []
-        if cityPOST:        
-            posts += db.Post.objects.filter( city = cityPOST)     
+        #if cityPOST or categoryPOST or sizePOST: 
+
+       
             
-        if categoryPOST:        
-            posts += db.Post.objects.filter( category__name = categoryPOST)     
+        if cityPOST:
+            posts = db.Post.objects.filter( city = cityPOST)      
+            
+        if categoryPOST: 
+            if not(cityPOST):
+                posts =  db.Post.objects.filter( category__name = categoryPOST)
+            posts.union(db.Post.objects.filter( category__name = categoryPOST))     
             
         if sizePOST:        
-            posts += db.Post.objects.filter( size__name = sizePOST)     
-        
+            posts.union(db.Post.objects.filter( size__name = sizePOST))     
+            if not(cityPOST) and  not(categoryPOST):
+                 posts =  db.Post.objects.filter( size__name = sizePOST)
+      
+        posts.distinct()
         
     response = render(request, "search.html", {
         "posts" : posts, 

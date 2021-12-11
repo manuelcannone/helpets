@@ -61,7 +61,9 @@
             <p class="style-of-register-p">Registrati o accedi per usufruire<br>al meglio del nostro servizio </p>
             </div>
             <div class="button-of-register">
-                <button class="btn buttonStyleRegister">Login</button>
+                <a href="{% url 'register' %}">
+                    <button class="btn buttonStyleRegister">Login</button>
+                </a>
             </div>
         </div>
     </section>
@@ -70,14 +72,16 @@
 
     
     {% for post in posts %}
-
+   
     <!-- section description of dog -->
     <section class="dog-description">
         <a class="removeDecoration" href="post/{{post.id}}"> 
             <div class="description-width-height">
                 <div class="container-of-description">
                 <div class="img-container">
-                    <img class="img-description-style" src="{{ MEDIA_URL }}{{post.img1}}"  alt="photo animal" href="#">
+                    <img class="img-description-style" src="/media/{{post.img1}}"  alt="photo animal" href="#">
+                
+               
                </div>
                 <div class="container-description-text"> 
                 <div class="description-text">
