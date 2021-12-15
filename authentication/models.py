@@ -131,9 +131,11 @@ class SetNotification(models.Model):
 
 
 
-class IsKennel(models.Model):
+class UserInformation(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True) 
     IsKennel = models.BooleanField(verbose_name="Kennel checked")
+    city = models.CharField(verbose_name="City", max_length=55)
+    
     
     class Meta():
         verbose_name = "Utenti Canili"

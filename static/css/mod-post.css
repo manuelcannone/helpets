@@ -28,14 +28,14 @@
     color: #FFBB00;
 }
 input#style-mod-post {
-    background-image: url("../img/search-icon3.png");
+    background-image: url("../img/search-icon.png");
     background-size:contain;
     background-repeat: no-repeat;
     text-indent: 34px;
     /* Extra Styling */
     padding: 5px 3px;
     transition:0.3s;
-    /* background-size: 25px 25px; */
+    background-size: 25px 25px;
     background-position: left;
     border: 1px solid #6364645c;
     height: 35px;

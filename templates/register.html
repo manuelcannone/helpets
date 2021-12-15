@@ -35,17 +35,17 @@
                 <div class="formContainer">
                     <h2>Registrati</h2>
                     <div id="hiddenContainer" >
-
-                            {% if messages %}
-                                {% for message in messages %}
-                                    {% if message.tags == "error" %}
-                                        
-                                            <p>{{message}}</p>
-                                        
-                                    {% endif %}
-                                {% endfor %}
-                            {% endif %}
-                          
+                        {% if messages %}
+                            {% for message in messages %}
+                                {% if message.tags == "error" %}
+                                    
+                                        <p>{{message}}</p>
+                                {% endif %}
+        
+                            {% endfor %}
+                        {% else %}
+                        <p></p>
+                        {% endif %}
                            
                     </div>
                     <div class="inputContainer">
@@ -74,7 +74,17 @@
             <div class="formContainer">
                 <h2>Registrati</h2>
                 <div id="hiddenContainer" >
-                    <p>Errore la mail non esiste!</p>
+                        {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == "error" %}
+                                
+                                    <p>{{message}}</p>
+                            {% endif %}
+
+                        {% endfor %}
+                    {% else %}
+                    <p></p>
+                    {% endif %}
                     </div>
                 <div class="inputContainer">
                     <form method="POST">

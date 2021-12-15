@@ -950,3 +950,78 @@ nav{
         font-size: 32px;
     }
 }
+
+
+/* loading */
+
+
+.loading_big_container{
+    width: 100%;
+    height: 100%;
+    background-color: #FFBB00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 999999999;
+}
+
+.loading img{
+    width: 40px;
+}
+
+.layer1, .layer2, .layer3, .layer4{
+    display: flex;
+}
+
+.layer2, .layer3, .layer4{
+    margin-top: -5px;
+}
+
+.empty_div{
+    width: 40px;
+    height: auto;
+}
+
+.loading{
+    animation-name: loopAnimation;
+    animation-iteration-count: infinite;
+}
+
+.lawyer{
+ 
+    opacity: 0;
+}
+:root {
+    --animate-duration: 800ms;
+  
+  }
+.dispalyNotNone{
+    opacity: 1;
+}
+@keyframes fade4{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    60%{
+        opacity: 0.5;
+    }
+
+    80%{
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}

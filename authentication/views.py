@@ -43,10 +43,13 @@ def register(request):
                 
                 # Create a variable to indicate if the user is a kennel
                 user = User.objects.get(username = username)
-                isKennel = db.IsKennel()
-                isKennel.user = user 
-                isKennel.IsKennel = False
-                isKennel.save()
+                UserInformation = db.UserInformation()
+                UserInformation.user = user 
+                UserInformation.IsKennel = False
+                if request.POST['city']:
+                    UserInformation.city = str(request.POST['city']).capitalize()
+                UserInformation.save()
+                
                 messages.success(request, "Registrazione effettuata con successo")
                 return redirect('/')
             else:
@@ -73,3 +76,24 @@ def logoutRoute(request):
     messages.success(request, "Logout effettuato con sucesso")
     return redirect("/")
 
+def loginRoute(request):
+    if request.method == 'POST':   
+        username = request.POST["username"]
+        password = request.POST['password1']
+        user = authenticate(username=username, password=password)
+        
+        if user is not(None):
+            login(request, user)
+            messages.success(request, "Registrazione effettuata con successo")
+            return redirect('/')
+        
+        else:
+            # error not validate
+            messages.error(request, "Email o password errati")
+            storage = messages.get_messages(request)
+            storage.used = True
+            print("Error")
+            return redirect('/auth/login/')        
+            
+            
+    return render(request, "login.html", )        

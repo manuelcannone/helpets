@@ -1,277 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+{% extends 'base.html' %}
+{% load static %}
+    
+    {% block head %}
+        <title>Login</title>
+    {% endblock head %}
 
-    <link rel="stylesheet" href="../static/css/auth.css">
-    <link rel="stylesheet" href="../static/css/base.css">
-    <link rel="stylesheet" href="../static/dependancy/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/dependancy/animate.min.css">
-
-
-</head>
-<body>
-
-    <div class="navbar">
-        <nav role="navigation">
-            <div id="menuToggle">
-        
-              <input type="checkbox" />
-              
-              <span></span>
-              <span></span>
-              <span></span>
-              
-              <ul id="menu">
-                <a href="#"><li><b>Home</b></li></a>
-                <a href="#"><li><b>Accedi</b></li></a>
-                <a href="#"><li><b>Registrati</b></li></a>
-                <a class="menu-search-a" href="#"><li><b>Cerca<img src="../static/img/search.png"></b></li></a>
-                <a href="#"><li class="saves-li"><b>Inserisci annuncio</b></li></a>
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="saves-li"><img alt="image not found" src="../static/img/bookmark.png"></li></a>
-              </ul>
-            </div>
-          </nav>
-
-          <div class="p-menu">
-            <p>Menù</p>
-          </div>
-
-        <div class="leftContent-nav">
-            <div class="navLogo">
-                <div class="imgBack">
-                    <img alt="image not found" src="../static/img/logoHelPets.png">
-                </div>
-                <p>HelPets.com</p>
-            </div>
-
-
-            <div class="navItems">
-                <a href="#"><p>Home</p></a>
-                <a href="#"><p>Accedi</p></a>
-                <a href="#"><p>Registrati</p></a>
-                <a id="search-a" href="#"><img src="../static/img/search.png"></a>
-            </div>
-        </div>
-
-
-        <div class="rightContent-nav animate__animated animate__fadeInRight">
-
-            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <div class="saves">
-                    <img alt="image not found" src="../static/img/bookmark.png">
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="addAnnouncement">
-                    <img alt="image not found" src="../static/img/plus.png">
-                    <p>Inserisci annuncio</p>
-                </div>
-            </a>
-        </div>
-    </div>
+    {% block style %}
+    
+        <link rel="stylesheet" href="{% static '/css/auth.css' %}">
+    {% endblock style %}
 
 
 
+{% block body %}
 
+  <!--                                                     START BODY                                                                 -->
 
+  <div class="whiteContainer">
 
+    <!--                                                 BIG ORANGE DIV                                                            -->
 
-    <!-- saved announcement list -->
+    <div class="loginContainer">
 
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Annunci salvati</h5>
-            <img class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" src="../static/img/close.png">
-        </div>
+    <!--                                                 GRAY CONTAINER INSIDE THE ORANGE ONE                                    -->
 
-        <div class="offcanvas-body">
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <form><button class="removeButton">Rimuovi</button></form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!--                                                     START BODY                                                                 -->
-
-    <div class="whiteContainer">
-
-        <!--                                                 BIG ORANGE DIV                                                            -->
-
-        <div class="loginContainer">
-
-        <!--                                                 GRAY CONTAINER INSIDE THE ORANGE ONE                                    -->
-
-            <div class="loginText">
-                <h2>Hai già un account?<br>accedi</h2>
-                <p>
-                    Accedi ad HelPets per riprendere la tua visita virtuale esattamente dove l’avevi interrotta la volta scorsa
-                </p>
-                
-                <!--                                                Button container                                        -->
-
-                <div class="buttonContainer">
-                    <button class="button">Accedi</button>
-                </div>
-
-            </div>
-
-
-                <!--                                                INPUT CONTAINER                                           -->
-
-             <div class="formContainer">
-                <h2>Login</h2>
-                <p id="hiddenParagraph"> <a href="#">Errore la mail non esiste!</a> </p>
-                <div class="inputContainer">
-                        <input type="email" placeholder="E-mail">
-                        <input type="password" placeholder="Password">
-
-                        <div class="textContainer">
-                            <p> <a href="#"> se possiedi un canile clicca qui </a></p>
-                        </div>
-                </div>
-
-                <!--                                                BUTTON CONTAINER INSIDE INPUT CONTAINER         -->
-
-                <div class="inputButton">
-                    <button class="button registerButton" >Accedi</button>
-                </div>
-            </div>
+        <div class="loginText">
+            <h2>Hai già un account?<br>accedi</h2>
+            <p>
+                Accedi ad HelPets per riprendere la tua visita virtuale esattamente dove l’avevi interrotta la volta scorsa
+            </p>
             
-        </div>
+            <!--                                                Button container                                        -->
 
-        <!--                                                        GRAY CONTAINER MOBILE VERSION                                   -->
-
-        <div class="FormContainerMobile">
-            <div class="formContainer">
-                <h2>Login</h2>
-                <p id="hiddenParagraph" >Errore la mail non esiste!</p>
-                <div class="inputContainer">
-                        <input type="email" placeholder="E-mail">
-                        <input type="password" placeholder="Password">
-                    
-                        <p> <a href="#"> se possiedi un canile clicca qui </a></p>
-                </div>
-                <div class="inputButton">
-                    <button class="button registerButton">Accedi</button>
-                </div>
+            <div class="buttonContainer">
+                <button class="button">Accedi</button>
             </div>
+
         </div>
 
+
+            <!--                                                INPUT CONTAINER                                           -->
+
+         <div class="formContainer">
+            <h2>Login</h2>
+            <div id="hiddenContainer" >
+            
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == "error" %}
+                            
+                                <p>{{message}}</p>
+                        {% endif %}
+
+                    {% endfor %}
+                {% else %}
+                <p></p>
+                {% endif %}
+          
+            </div>
+            <div class="inputContainer">
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <input  name="username"  placeholder="E-mail">
+                    <input type="password" name="password1" placeholder="Password">
+
+                    <div class="textContainer">
+                        <p> <a href="#"> se possiedi un canile clicca qui </a></p>
+                    </div>
+            
+
+            <!--                                                BUTTON CONTAINER INSIDE INPUT CONTAINER         -->
+
+            <div class="inputButton">
+                <button class="button registerButton" >Accedi</button>
+            </div>
+
+            </form>
+        </div>
+
+        </div>
+        
     </div>
+
+    <!--                                                        GRAY CONTAINER MOBILE VERSION                                   -->
+
+    <div class="FormContainerMobile">
+        <div class="formContainer">
+            <h2>Login</h2>
+            <div id="hiddenContainer" >
+                <p>Errore la mail non esiste!</p>
+                </div>
+            <div class="inputContainer">
+
+                <form action="">
+
+                    <input type="email" placeholder="E-mail">
+                    <input type="password" placeholder="Password">
+                
+                    <p> <a href="#"> se possiedi un canile clicca qui </a></p>
+            
+            <div class="inputButton">
+                <button class="button registerButton">Accedi</button>
+            </div>
+
+        </form>
+
+        </div>
+        </div>
+    </div>
+
+</div>
 
 <!-- END BODY -->
-
-<div class="footer">
-    <div class="info">
-        <h2>info:</h2>
-        <p>Email: helpets@gmail.com</p>
-        <p>Telofono: "da mettere"</p>
-        <p>Instagram: helpets.com</p>
-
-    </div>
-
-    <div class="terms">
-        <h2>terms:</h2>
-        <a href="#"><p>Termini e condizi</p></a>
-        <a href="#"><p>Assistenza</p></a>
-    </div>
-
-    <div class="logoFooter">
-        <div class="navLogo">
-            <div class="imgBack">
-                <img alt="image not found" src="../static/img/logoHelPets.png">
-            </div>
-            <p>HelPets.com</p>
-        </div>
-    </div>
-</div>
-<div class="develope">
-    <p>Sito sviluppato da <a href="https://www.jready.it/" target="_blank"><span><span id="Jspan">J</span>ready</span></a></p>
-</div>
-
-    <script src="../static/dependancy/jquery.js"></script>
-    <script src="../static/dependancy/bootstrap.min.js"></script>
-    <script src="../static/dependancy/wow.min.js"></script>
-
-</body>
-</html>
+  
+{% endblock body %}

@@ -4,6 +4,7 @@ from django.db.models import Q
 from authentication.admin import cityAdmin
 
 from . import models as db
+
 # Create your views here.
 def search(request):
    
@@ -22,6 +23,7 @@ def search(request):
        
             
         if cityPOST:
+            
             posts = db.Post.objects.filter( city = cityPOST)      
             
         if categoryPOST: 
