@@ -93,26 +93,33 @@ class Kennel(models.Model):
 
             kennel = Kennel()            
             kennel.user = addUser
-            kennel.email = addUser.email
+            kennel.email = addUser.username
             kennel.username = addUser.username
             kennel.city = addCity.capitalize()
-            kennel.address = addAddress
-            kennel.piva = addPiva
             kennel.checked = False
+            
+            if addAddress:
+                kennel.address = addAddress
+            
+            if addPiva:
+                kennel.piva = addPiva
+             
             if addCap:
                 kennel.cap = addCap
-            
+            print("kennel is saved")
             kennel.save()
-            
+           
             newKennel = Kennel.objects.filter(email = addUser.email, username = addUser.username)
 
             sendNotify("New Kennel available","email: " + addUser.email+ '\ncity:' + addCity + ", " + addAddress +"\nlink: " + settings.LINK_URL[0] +"it/admin/authentication/kennel/" +str(newKennel[0].id)+   "/change") 
 
             # user authentication
-            # login(addUser.username, addUser.password)
+            
             Kennel.addCityAvailable(kennel)
+            
+            
         except Exception as e:
-            raise ValueError("Sistem error")
+            raise ValueError(e)
     
    
 

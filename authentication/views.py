@@ -97,3 +97,68 @@ def loginRoute(request):
             
             
     return render(request, "login.html", )        
+
+
+def kennelLogin(request):
+    if request.method == 'POST': 
+    
+        user = ""
+        
+        if request.user.is_authenticated:
+            
+            user = request.user
+
+        else:
+            username = request.POST["username"]
+            password = request.POST['password1']
+            userAuth = authenticate(username=username, password=password)  
+            
+            if User.objects.filter(username = username).exists():
+            
+                if userAuth is not(None):
+                    # if user exist execute basic login
+                    login(request, userAuth) 
+                
+                else:
+                    # error not validate
+                    messages.error(request, "Email o password errati")
+                    storage = messages.get_messages(request)
+                    storage.used = True
+                    print("Error")
+                    return redirect('/auth/loginKennel/')  
+                
+            else:
+                # error not validate
+                messages.error(request, "Utente inesistente")
+                storage = messages.get_messages(request)
+                storage.used = True
+                print("Error")
+                return redirect('/auth/register/') 
+            
+                
+          
+        try:
+            print("dwqdwqd")
+            address = False
+            piva = False
+            cap = False
+            if request.POST["address"]:
+                address = request.POST["address"]
+                
+            if  request.POST["iva"]:
+                piva =  request.POST["iva"]
+                
+            if request.POST["cap"]:
+                cap = request.POST["cap"]
+            db.Kennel.newKennel(request, user, request.POST["city"], address, piva, cap)
+            return redirect("/") 
+                
+        except Exception as e:
+            messages.error(request, e)
+            storage = messages.get_messages(request)
+            storage.used = True
+            print("Error")
+            return redirect('/auth/register/') 
+        
+           
+    return render(request, "registerKennel.html")

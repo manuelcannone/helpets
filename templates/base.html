@@ -111,7 +111,7 @@
                     
                     
                     <a class="menu-search-a" href="{% url 'search' %}"><li><b>Cerca<img src="{% static '/img/search.png' %}"></b></li></a>
-                    <a href="#"><li class="saves-li"><b>Inserisci annuncio</b></li></a>
+                    <a href="{% url 'loginKennel'  %}"><li class="saves-li"><b>Inserisci annuncio</b></li></a>
                     <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="saves-li"><img alt="image not found" src="{% static '/img/bookmark.png' %}"></li></a>
                 </ul>
                 </div>
@@ -154,8 +154,8 @@
                         <img alt="image not found" src="{% static '/img/bookmark.png' %}">
                     </div>
                 </a>
-
-                <a href="#">
+                
+                <a href="{% url 'loginKennel'  %}">
                     <div class="addAnnouncement">
                         <img alt="image not found" src="{% static '/img/plus.png' %}">
                         <p>Inserisci annuncio</p>

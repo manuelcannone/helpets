@@ -1,172 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register kennel</title>
+{% extends 'base.html' %}
+{% load static %}
 
-    <link rel="stylesheet" href="../static/css/auth.css">
-    <link rel="stylesheet" href="../static/css/registerKennel.css">
-    <link rel="stylesheet" href="../static/css/base.css">
-    <link rel="stylesheet" href="../static/dependancy/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/dependancy/animate.min.css">
+    {% block head %}
+   
+        <title>Register kennel</title>
+    {% endblock head %}
+ 
+    {% block style %}
+        <link rel="stylesheet" href="{% static '/css/auth.css' %}">
+        <link rel="stylesheet" href="{% static '/css/registerKennel.css' %}">
+    {% endblock style %}
 
-    
-
-
-</head>
-<body>
-
-    <div class="navbar">
-        <nav role="navigation">
-            <div id="menuToggle">
-        
-              <input type="checkbox" />
-              
-              <span></span>
-              <span></span>
-              <span></span>
-              
-              <ul id="menu">
-                <a href="#"><li><b>Accedi</b></li></a>
-                <a href="#"><li><b>Registrati</b></li></a>
-                <a href="#"><li class="saves-li"><b>Inserisci annuncio</b></li></a>
-                <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><li class="saves-li"><img alt="image not found" src="../static/img/bookmark.png"></li></a>
-              </ul>
-            </div>
-          </nav>
-
-          <div class="p-menu">
-              <p>Menù</p>
-          </div>
-
-        <div class="leftContent-nav">
-            <div class="navLogo">
-                <div class="imgBack">
-                    <img alt="image not found" src="../static/img/logoHelPets.png">
-                </div>
-                <p>HelPets.com</p>
-            </div>
-
-
-            <div class="navItems">
-                <a href="#"><p>Home</p></a>
-                <a href="#"><p>Accedi</p></a>
-                <a href="#"><p>Registrati</p></a>
-            </div>
-        </div>
-
-
-        <div class="rightContent-nav animate__animated animate__fadeInRight">
-
-            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <div class="saves">
-                    <img alt="image not found" src="../static/img/bookmark.png">
-                </div>
-            </a>
-
-            <a href="#">
-                <div class="addAnnouncement">
-                    <img alt="image not found" src="../static/img/plus.png">
-                    <p>Inserisci annuncio</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
-     <!-- saved announcement list -->
-
-     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Annunci salvati</h5>
-            <img class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" src="../static/img/close.png">
-        </div>
-
-        <div class="offcanvas-body">
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <a href="#"><button class="removeButton">Rimuovi</button></a>
-                </div>
-            </div>
-
-            <div class="save-announcement">
-                <div class="img-save-announcement-box">
-                    <div class="img-save-announcement">
-                        <img alt="image not found" src="../static/img/saveAnnouncementDog.jpg">
-                    </div>
-                </div>
-
-                <div class="save-announcement-buttons">
-                    <a href="#"><button class="visitButton">Visita</button></a>
-                    <form><button class="removeButton">Rimuovi</button></form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- START BODY -->
-
+    {% block body %}  
+ 
     <div class="whiteContainer">
         <div class="loginContainer">
             <div class="loginText">
@@ -183,26 +29,58 @@
 
              <div class="formContainer">
                 <h2>Registra il tuo canile</h2>
-                <p id="hiddenParagraph"> <a href="#">Errore la mail non esiste!</a> </p>
+                <div id="hiddenContainer" >
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == "error" %}
+                                
+                                    <p>{{message}}</p>
+                            {% endif %}
 
+                        {% endfor %}
+                    {% else %}
+                    <p></p>
+                    {% endif %}
+                    </div>
+
+                <form method="POST">
+                    {% csrf_token %}
                 <div class="kennelInputContainer">
 
+                    
+
                     <div class="inputContainer">
-                            <input type="email" placeholder="E-mail">
-                            <input type="password" placeholder="Password">
-                            <input type="text" placeholder="Username">
-                            <input type="text" placeholder="Pv. Iva">
+
+                            {% if request.user.is_authenticated %}
+                                <input type="email" name="username"  placeholder="E-mail" disabled >
+                                <input type="password" name="password1" placeholder="Password" disabled >
+
+                            {% else %}
+                                <input type="email" name="username"  placeholder="E-mail">
+                                <input type="password"  name="password1" placeholder="Password" >  
+                            {% endif %}
+
+                            
+                            <input type="text" name="phone"  placeholder="Numero di telefono">
+                            <input type="text" name="iva"  placeholder="Pv. Iva">
 
                             <div class="textContainer">
-                               <input type="checkbox" > <p>termini e condizioni</p>
+                               <input type="checkbox" > <p> <a href="#">termini e condizioni</a> </p>
                             </div>
+
+                        
+
                     </div>
 
                     <div class="inputContainer">
-                        <input type="text" placeholder="Paese">
-                        <input type="text" placeholder="Città">
-                        <input type="text" placeholder="Indirizzo">
-                        <input type="text" placeholder="Cap">
+
+                    
+
+                        <input type="text" name="nickname" placeholder="Nickname">
+                        <input type="text" name="city" placeholder="Città">
+                        <input type="text" name="address" placeholder="Indirizzo">
+                        <input type="text" name="cap" placeholder="Cap">
+                    
                     
                         
                     </div>
@@ -213,75 +91,76 @@
                     <button class="button registerButton" >Accedi</button>
                 </div>
             </div>
+
+        </form>
             
         </div>
 
         <div class="FormContainerMobile">
             <div class="formContainer">
                 <h2>Registrati</h2>
-                <p id="hiddenParagraph" >Errore la mail non esiste!</p>
+                <div id="hiddenContainer" >
+                    {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == "error" %}
+                            
+                                <p>{{message}}</p>
+                        {% endif %}
+
+                            {% endfor %}
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+                    </div>
+
+            <form method="POST">
+                {% csrf_token %}
                 <div class="inputContainer">
-                        <input type="email" placeholder="E-mail">
-                        <input type="password" placeholder="Password">
-                        <input type="text" placeholder="Username">
-                        <input type="text" placeholder="Pv. Iva">
+
                     
+
+                    {% if request.user.is_authenticated %}
+                    <input type="email" name="username"  placeholder="E-mail" disabled >
+                    <input type="password" name="password1" placeholder="Password" disabled >
+
+                    {% else %}
+                        <input type="email" name="username"  placeholder="E-mail">
+                        <input type="password"  name="password1" placeholder="Password" >  
+                    {% endif %}
+
+                    
+                    <input type="text" name="phone"  placeholder="Numero di telefono">
+                    <input type="text" name="iva"  placeholder="Pv. Iva">
+                        
                         <!-- <p> <a href="#"> se possiedi un canile clicca qui </a></p> -->
                 </div>
 
                 <div class="inputContainer">
-                    <input type="text" placeholder="Paese">
-                    <input type="text" placeholder="Città">
-                    <input type="text" placeholder="Indirizzo">
-                    <input type="text" placeholder="Cap">
+
+          
+                    <input type="text" name="nickname" placeholder="Nickname">
+                    <input type="text" name="city" placeholder="Città">
+                    <input type="text" name="address" placeholder="Indirizzo">
+                    <input type="text" name="cap" placeholder="Cap">
                 
                     <div class="textContainer">
-                        <input type="checkbox" > <p>termini e condizioni</p>
+                        <input type="checkbox" > <p> <a href="#">termini e condizioni</a> </p>
                      </div>
+                   
                     
                 </div>
 
                 <div class="inputButton">
                     <button class="button registerButton">Accedi</button>
                 </div>
+
+            </form>
+
             </div>
         </div>
 
     </div>
 
 <!-- END BODY -->
-
-<div class="footer">
-    <div class="info">
-        <h2>info:</h2>
-        <p>Email: helpets@gmail.com</p>
-        <p>Telofono: "da mettere"</p>
-        <p>Instagram: helpets.com</p>
-
-    </div>
-
-    <div class="terms">
-        <h2>terms:</h2>
-        <a href="#"><p>Termini e condizi</p></a>
-        <a href="#"><p>Assistenza</p></a>
-    </div>
-
-    <div class="logoFooter">
-        <div class="navLogo">
-            <div class="imgBack">
-                <img alt="image not found" src="../static/img/logoHelPets.png">
-            </div>
-            <p>HelPets.com</p>
-        </div>
-    </div>
-</div>
-<div class="develope">
-    <p>Sito sviluppato da <a href="https://www.jready.it/" target="_blank"><span><span id="Jspan">J</span>ready</span></a></p>
-</div>
-
-    <script src="../static/dependancy/bootstrap.min.js"></script>
-    <script src="../static/dependancy/jquery.js"></script>
-    <script src="../static/dependancy/wow.min.js"></script>
-
-</body>
-</html>
+    
+{% endblock body %}
